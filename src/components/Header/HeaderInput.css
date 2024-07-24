@@ -1,0 +1,32 @@
+#main-header-input {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 238px;
+    height: 35px; 
+    
+}
+
+#main-header-input input{
+   position: relative;
+   height: 35px;
+   color: #fff;
+   background-color: transparent;
+}
+
+#main-header-input input::placeholder {
+    color: #fff;
+}
+
+#main-header-input .form-control:focus {
+    box-shadow: none;
+    border-color: #fcfffefb; 
+  }
+
+#main-header-input i {
+    position: absolute;
+    font-size: 1.6em;
+    margin-right: 10px;
+    color: rgba(49, 194, 141, 1);
+
+}

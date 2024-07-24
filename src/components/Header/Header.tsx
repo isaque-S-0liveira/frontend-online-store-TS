@@ -1,7 +1,12 @@
+import './Header.css';
+import HeaderElementsMD from './HeaderElementsMD';
+import HeaderElementsSM from './HeaderElementsSM';
+
 function Header() {
   return (
-    <header>
-      <h1>Header</h1>
+    <header id="main-header">
+      <HeaderElementsSM />
+      <HeaderElementsMD />
     </header>
   );
 }
