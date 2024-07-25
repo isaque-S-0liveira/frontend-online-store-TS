@@ -1,4 +1,6 @@
-export async function getCategories() {
+import { Category } from '../types/ProductTypes';
+
+export async function getCategories(): Promise<Category[]> {
   const response = await fetch('https://api.mercadolibre.com/sites/MLB/categories');
   return response.json();
 }

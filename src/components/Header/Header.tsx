@@ -4,7 +4,7 @@ import HeaderElementsSM from './HeaderElementsSM';
 
 function Header() {
   return (
-    <header id="main-header">
+    <header className="fixed-top" id="main-header">
       <HeaderElementsSM />
       <HeaderElementsMD />
     </header>

@@ -8,6 +8,7 @@
     background: rgb(27, 29, 32);
     padding-left: 15px;
     padding-right: 15px;
+    box-sizing: border-box;
 }
 
 #main-header #full-logo-img {

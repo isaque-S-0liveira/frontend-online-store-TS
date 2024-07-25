@@ -1,0 +1,24 @@
+#categories-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#categories-main .category-button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-bottom: 1px  solid white;
+    margin: 10px;
+    padding: 20px;
+    transition: .3s;
+}
+
+#categories-main .category-selected,
+#categories-main .category-button:hover {
+    background-color: #f0f0f0;
+    color: black;
+    border: none;
+    border-bottom: 1px  solid white;
+    margin: 10px;
+    padding: 20px;
+}
