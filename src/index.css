@@ -1,3 +1,32 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
 body {
     background-color: rgba(119, 119, 119, 0.108);
+}
+
+.main-content {
+    margin-top: 148px;
+    height: calc(100vh - 148px);
+    overflow-y: auto;
+    box-sizing: border-box; /* Inclui padding na altura total */
+}
+
+
+::-webkit-scrollbar {
+    width: 12px; /* Largura da barra de rolagem */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888; /* Cor do polegar */
+    border-radius: 6px; /* Borda arredondada */
+}
+
+::-webkit-scrollbar-track {
+    background:  transparent; /* Cor do fundo */
+    border-radius: 6px; /* Borda arredondada */
 }
