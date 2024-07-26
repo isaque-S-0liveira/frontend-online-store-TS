@@ -1,19 +1,15 @@
-html, body {
+html, body,  #root{
     margin: 0;
     padding: 0;
     height: 100%;
     overflow: hidden;
-}
-
-body {
-    background-color: rgba(119, 119, 119, 0.108);
-}
-
+  }
 .main-content {
+    display: flex;
     margin-top: 148px;
-    height: calc(100vh - 148px);
-    overflow-y: auto;
-    box-sizing: border-box; /* Inclui padding na altura total */
+    height: calc(100% - 148px);
+    overflow-y: hidden;
+    box-sizing: border-box; 
 }
 
 

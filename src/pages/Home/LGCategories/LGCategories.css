@@ -1,0 +1,27 @@
+/*LGCategories.css*/
+#categories-main-LG {
+    max-width: 320px;
+    background-color: rgb(33, 37, 41);
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+#categories-main-LG #categories-title {
+    color: white;
+    max-height: 83px;
+    width: 100%;
+    padding: 20px;
+    border-bottom: 1px solid white;
+    background-color: rgb(33 37 41);
+    flex-shrink: 0; /* Impede o encolhimento do título */
+}
+
+#categories-main-LG #categories-body {
+    padding: 20px;
+    height: calc(100% - 83px);
+    overflow-y: auto;
+    box-sizing: border-box;
+    
+}
