@@ -12,6 +12,7 @@
    height: 35px;
    color: #fff;
    background-color: transparent;
+   padding-right: 40px;
 }
 
 #main-header-input input::placeholder {
@@ -23,10 +24,13 @@
     border-color: #fcfffefb; 
   }
 
-#main-header-input i {
+#main-header-input #header-search-button {
+    border: none;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
     position: absolute;
     font-size: 1.6em;
     margin-right: 10px;
     color: rgba(49, 194, 141, 1);
-
 }
