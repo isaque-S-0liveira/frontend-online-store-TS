@@ -4,7 +4,7 @@ import SearchTermContext from '../../context/SearchProductsContext';
 
 function HeaderInput() {
   const [search, setSearch] = useState('');
-  const { setSearchTermCT } = useContext(SearchTermContext);
+  const { setSearchTermCT, setSearchCategoryCT } = useContext(SearchTermContext);
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     setSearch((e.target as HTMLInputElement).value);
@@ -12,6 +12,7 @@ function HeaderInput() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setSearchCategoryCT('');
     setSearchTermCT(search);
     setSearch('');
   };

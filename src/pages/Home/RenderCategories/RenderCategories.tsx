@@ -5,7 +5,7 @@ import './RenderCategories.css';
 import SearchProductsContext from '../../../context/SearchProductsContext';
 
 function RenderCategories() {
-  const { setSearchCategoryCT } = useContext(SearchProductsContext);
+  const { setSearchCategoryCT, setSearchTermCT } = useContext(SearchProductsContext);
   const [categories, setCategories] = useState<Category[]>([]);
   const [stateCategoryId, setStateCategoryId] = useState<string | null>(null);
 
@@ -19,6 +19,7 @@ function RenderCategories() {
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     const categoryId = event.currentTarget.value;
+    setSearchTermCT('');
     setSearchCategoryCT(categoryId);
     setStateCategoryId(categoryId);
   };

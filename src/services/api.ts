@@ -11,9 +11,7 @@ export async function getProductsFromCategoryAndQuery(
 ): Promise<Product[]> {
   let url = 'https://api.mercadolibre.com/sites/MLB/search?';
 
-  if (categoryId && query) {
-    url += `category=${categoryId}&q=${query}`;
-  } else if (categoryId) {
+  if (categoryId) {
     url += `category=${categoryId}`;
   } else if (query) {
     url += `q=${query}`;
