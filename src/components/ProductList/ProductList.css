@@ -1,0 +1,112 @@
+#product-list-main {
+    padding: 10px;
+    height: calc(100% - 83px);
+    overflow-y: auto;
+    margin-top: 2px;
+    margin-right: 2px;
+}
+
+
+
+@media screen and (min-width: 992px){
+    #product-list-main {
+        height: 100%;
+    }
+    
+}
+
+#product-status-main {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 83px);
+    justify-content: center;
+    align-items: center;
+}
+
+#product-status-main #product-status {
+    color: rgba(49, 194, 141, 1);
+    font-family: Epilogue;
+    font-size: 30px;
+    font-weight:bolder;
+    text-align: center;
+}
+
+#product-status-main #product-status-aux {
+    font-family: Epilogue;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 20.5px;
+    text-align: center;
+}
+
+#product-list-main .product-card {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;  
+}
+
+@media screen and (min-width: 992px){
+    #product-list-main .product-card {
+      min-width: 279.6px;
+    }
+    
+}
+
+#product-list-main .product-card img {
+    width: 100%;
+    max-width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+@media screen and (min-width: 576px){
+    #product-list-main .product-card img {
+        max-width: 150px;
+        height: 150px;
+    }
+    
+}
+
+@media screen and (min-width: 768px){
+    #product-list-main .product-card img {
+        max-width: 200px;
+        height: 200px;
+    }
+    
+}
+
+@media screen and (min-width: 992px){
+    #product-list-main .product-card img {
+        max-width: 250px;
+        height: 250px;
+    }
+    
+}
+
+#product-list-main .product-card .product-name {
+    font-family: Epilogue;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 16.4px;
+    text-align: center;    
+    width: 100%;
+    color: #000;
+    margin-top: 10px;
+    height: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px;
+}
+
+#product-list-main .product-card .product-price {
+    font-family: Epilogue;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 20.5px;
+    text-align: left;    
+}
+
