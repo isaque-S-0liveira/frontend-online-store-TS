@@ -3,17 +3,34 @@ html, body,  #root{
     padding: 0;
     height: 100%;
     overflow: hidden;
+    background-color: #9a989813;
   }
+
 .main-content {
-    display: flex;
     margin-top: 148px;
     height: calc(100% - 148px);
-    overflow-y: hidden;
+    overflow: hidden;
     box-sizing: border-box; 
+}
+
+.primary-button {
+    background-color: #31C28D;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.primary-button:hover {
+    background-color: #1E9E7D;
 }
 
 
 ::-webkit-scrollbar {
+    height: 5px;
     width: 12px; /* Largura da barra de rolagem */
 }
 
