@@ -31,6 +31,16 @@
     background-color: transparent;
     position: absolute;
     font-size: 1.6em;
-    margin-right: 10px;
     color: rgba(49, 194, 141, 1);
 }
+
+#main-header-input #header-search-button i {
+    padding-left: 8px;
+    border-left: 1px solid rgba(49, 194, 141, 1);
+    padding-right: 10px;
+}
+
+#main-header-input #header-search-button i:hover {
+    background-color: rgba(203, 255, 236, 0.086);
+}
+

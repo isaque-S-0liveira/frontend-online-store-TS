@@ -1,10 +1,12 @@
 import { useContext, useState } from 'react';
 import './HeaderInput.css';
+import { useNavigate } from 'react-router-dom';
 import SearchTermContext from '../../context/SearchProductsContext';
 
 function HeaderInput() {
   const [search, setSearch] = useState('');
   const { setSearchTermCT, setSearchCategoryCT } = useContext(SearchTermContext);
+  const navigate = useNavigate();
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     setSearch((e.target as HTMLInputElement).value);
@@ -15,6 +17,7 @@ function HeaderInput() {
     setSearchCategoryCT('');
     setSearchTermCT(search);
     setSearch('');
+    navigate('/');
   };
 
   return (
