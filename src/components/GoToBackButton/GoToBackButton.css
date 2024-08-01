@@ -1,0 +1,28 @@
+.back-button-container {
+    margin-left: 0px;
+    z-index: 100;
+}
+
+.back-button-container .back-button {
+    border: none;
+    background-color: transparent;
+    height: auto;
+    width: 140px;
+}
+
+.back-button-container .back-button img {
+    width: 20px;
+    padding-bottom: 7px;
+}
+
+.back-button-container .back-button span {
+    height: 15px;
+    font-family: Epilogue;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 16.4px;
+    text-align: left;
+    color: rgba(47, 193, 140, 1);
+;    
+}
+
