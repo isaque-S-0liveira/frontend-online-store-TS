@@ -8,4 +8,22 @@ export type Product = {
   title: string;
   price: number;
   thumbnail: string;
+  pictures: [
+    {
+      id: string;
+      url: string;
+    },
+  ]
+  attributes: [
+    {
+      id: string;
+      name: string;
+      values: [
+        {
+          name: string;
+        },
+      ]
+    },
+  ]
+  warranty: string;
 };

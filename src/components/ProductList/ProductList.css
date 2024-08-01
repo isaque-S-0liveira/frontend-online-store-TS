@@ -49,11 +49,25 @@
     border-radius: 10px;  
 }
 
+#product-list-main .product-card:hover {
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+}
+
 @media screen and (min-width: 992px){
     #product-list-main .product-card {
       min-width: 279.6px;
     }
     
+}
+
+#product-list-main .product-datails-link {
+    color: #00901a;
+    text-decoration: none;
+}
+
+#product-list-main .product-datails-link:hover {
+    color: #00800f;
+    font-weight: 700;
 }
 
 #product-list-main .product-card img {

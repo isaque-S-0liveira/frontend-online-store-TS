@@ -1,0 +1,55 @@
+#product-technical-specifications-main {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    height: calc(100% - 5px);
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+@media screen and (min-width: 768px) {
+    #product-technical-specifications-main {
+        height: 100%;
+        margin-top: 0px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #product-technical-specifications-main {
+        padding-bottom: 0px;
+    }
+    
+}
+
+#product-technical-specifications-header {
+    width: 100%;
+    padding: 0 20px 10px;
+    font-size: 25px;
+    height: 50px;
+    font-weight: 700;
+    line-height: 20.5px;
+    color: rgba(0, 0, 0, 1);
+}
+
+#product-technical-specifications-body {
+    overflow-y: scroll;
+    width: 100%;
+    height: calc(100% - 25px);
+}
+
+#product-technical-specifications-footer {
+     display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    padding: 0 20px; 
+    font-family: Epilogue;
+    color: #000000;
+}
+
+#product-technical-specifications-footer #add-cart-button-container {
+    display: flex;
+    justify-content: center;
+}

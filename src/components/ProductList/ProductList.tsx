@@ -1,9 +1,11 @@
 import { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import SearchTermContext from '../../context/SearchProductsContext';
 import './ProductList.css';
 import { getProductsFromCategoryAndQuery } from '../../services/api';
 import { Product } from '../../types/ProductTypes';
 import Loading from '../Loading/Loading';
+import AddCartButton from '../AddCartButton/AddCartButton';
 
 function ProductList() {
   const { searchTermCT, searchCategoryCT } = useContext(SearchTermContext);
@@ -24,7 +26,6 @@ function ProductList() {
           searchCategoryCT,
           searchTermCT,
         );
-
         setProducts(response);
         if (searchTermCT !== '' && response.length === 0) {
           setProductStatus(`Nenhum produto com o nome ${searchTermCT}  encontrado`);
@@ -64,6 +65,12 @@ function ProductList() {
         {products.map((product) => (
           <div key={ product.id } className="col-12 col-sm-4">
             <div className="product-card">
+              <Link
+                className="product-datails-link"
+                to={ `/product-details/${product.id}` }
+              >
+                Ver detalhes
+              </Link>
               <img src={ product.thumbnail } alt={ product.title } />
               <p className="product-name">{product.title}</p>
               <p className="product-price">
@@ -71,12 +78,7 @@ function ProductList() {
                 {' '}
                 {product.price}
               </p>
-              <button
-                className="primary-button"
-                type="button"
-              >
-                Adicionar ao carrinho
-              </button>
+              <AddCartButton />
             </div>
           </div>
         ))}

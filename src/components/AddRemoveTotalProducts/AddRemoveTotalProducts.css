@@ -1,0 +1,45 @@
+#add-remove-total-products-container {
+        display: flex;
+        align-items: center; 
+        justify-content: space-evenly;
+        padding-left: 25px;
+}
+
+
+#add-remove-total-products-container #total-value-products-container {
+    display: flex;
+    align-items: center;
+    padding-right: 5px;
+}
+
+#add-remove-total-products-container #total-value-products{
+    font-size: 20px;
+    line-height: 20.5px;
+    font-weight: bold;
+    max-width: 180px;
+    overflow-x: auto;
+    color: rgba(68, 73, 85, 1);
+    padding-left: 5px;
+}
+
+
+#add-remove-total-products-container #remove-add-buttons-container{
+    display: flex;
+    align-items: center;
+}
+
+#add-remove-total-products-container #quantity-of-products {
+    padding: 5px 10px;
+    background-color: #71636320;
+    border-radius: 100%;
+}
+
+#add-remove-total-products-container .add-remove-product-button{
+    color: rgb(44, 44, 45);
+    background-color: transparent;
+    border: none;
+    font-size: 35px;
+    border-radius: 5px;;
+    cursor: pointer;
+    padding: 0;
+}
