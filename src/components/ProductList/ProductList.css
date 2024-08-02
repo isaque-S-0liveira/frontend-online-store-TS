@@ -78,33 +78,10 @@
 
 #product-list-main .product-card img {
     width: 100%;
-    max-width: 100px;
-    height: 100px;
+    object-fit: cover;
+    max-width: 150px;
+    height: auto;
     border-radius: 10px;
-}
-
-@media screen and (min-width: 576px){
-    #product-list-main .product-card img {
-        max-width: 150px;
-        height: 150px;
-    }
-    
-}
-
-@media screen and (min-width: 768px){
-    #product-list-main .product-card img {
-        max-width: 200px;
-        height: 200px;
-    }
-    
-}
-
-@media screen and (min-width: 992px){
-    #product-list-main .product-card img {
-        max-width: 220px;
-        height: 220px;
-    }
-    
 }
 
 #product-list-main .product-card .product-name {
