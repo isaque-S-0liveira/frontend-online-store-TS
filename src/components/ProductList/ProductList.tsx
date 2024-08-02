@@ -78,7 +78,13 @@ function ProductList() {
                 {' '}
                 {product.price}
               </p>
-              <AddCartButton />
+              <AddCartButton
+                id={ product.id }
+                title={ product.title }
+                thumbnail={ product.thumbnail }
+                Totalprice={ product.price }
+                quantity={ 1 }
+              />
             </div>
           </div>
         ))}
