@@ -55,14 +55,20 @@
 
 @media screen and (min-width: 992px){
     #product-list-main .product-card {
-      min-width: 279.6px;
+      min-width: 100%;
+      max-width: 250.6px;
     }
     
 }
 
 #product-list-main .product-datails-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     color: #00901a;
     text-decoration: none;
+    width: 100%;
 }
 
 #product-list-main .product-datails-link:hover {
@@ -95,8 +101,8 @@
 
 @media screen and (min-width: 992px){
     #product-list-main .product-card img {
-        max-width: 250px;
-        height: 250px;
+        max-width: 220px;
+        height: 220px;
     }
     
 }
@@ -110,9 +116,9 @@
     width: 100%;
     color: #000;
     margin-top: 10px;
-    height: auto;
+    min-height: 60px;
     overflow: hidden;
-    white-space: nowrap;
+    max-height: 60px;
     padding: 10px;
 }
 

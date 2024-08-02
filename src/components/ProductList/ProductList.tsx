@@ -69,15 +69,14 @@ function ProductList() {
                 className="product-datails-link"
                 to={ `/product-details/${product.id}` }
               >
-                Ver detalhes
+                <img src={ product.thumbnail } alt={ product.title } />
+                <p className="product-name">{product.title}</p>
+                <p className="product-price">
+                  R$
+                  {' '}
+                  {product.price}
+                </p>
               </Link>
-              <img src={ product.thumbnail } alt={ product.title } />
-              <p className="product-name">{product.title}</p>
-              <p className="product-price">
-                R$
-                {' '}
-                {product.price}
-              </p>
               <AddCartButton
                 id={ product.id }
                 title={ product.title }
