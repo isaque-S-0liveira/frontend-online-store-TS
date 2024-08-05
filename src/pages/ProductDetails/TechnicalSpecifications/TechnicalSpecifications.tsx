@@ -6,7 +6,7 @@ import { Product } from '../../../types/ProductTypes';
 import './TechnicalSpecifications.css';
 
 function TechnicalSpecifications({ productDetail }: { productDetail: Product }) {
-  const [quantityAndValue, setQuantityAndValue] = useState({ quantity: 1, value: productDetail.price });
+  const [quantityAndValue, setQuantityAndValue] = useState({ quantity: 1, totalValue: productDetail.price });
 
   if (!productDetail || !productDetail.pictures) {
     return null;
@@ -57,9 +57,10 @@ function TechnicalSpecifications({ productDetail }: { productDetail: Product }) 
         >
           <AddCartButton
             id={ productDetail.id }
+            price={ productDetail.price }
             title={ productDetail.title }
             thumbnail={ productDetail.thumbnail }
-            Totalprice={ quantityAndValue.value }
+            totalPrice={ quantityAndValue.totalValue }
             quantity={ quantityAndValue.quantity }
           />
         </div>
