@@ -30,7 +30,8 @@ function ProductPictures({ productDetail }: { productDetail: Product }) {
         {productDetail.pictures.map((picture, index) => (
           <div
             key={ picture.id }
-            className={ `carousel-item ${index === 0 ? 'active' : ''}` }
+            data-bs-interval="4000"
+            className={ `carousel-item  ${index === 0 ? 'active' : ''}` }
           >
             <img
               src={ picture.url }
