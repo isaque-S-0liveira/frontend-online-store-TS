@@ -12,24 +12,28 @@
 }
 
 #main-header #full-logo-img {
+    order: 0;
     width: 150.27px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
-#main-header #input-and-icon-div {
+#main-header #main-header-input {
+    order: 1;
+}
+
+#main-header #shopping-cart-offcanvas {
+    order: 2;
+}
+
+
+#main-header #header-itens-md-img{
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 35px;
-    background: rgb(27, 29, 32);
+    justify-content: center;
+    gap: 15px;
+    flex-direction: row;
 }
 
-#main-header #shopping-cart-icon {
-    font-size: 30px;
-    margin-left: 50px;
-    color: #fff;
-}    
 
 @media screen and (min-width: 768px) {
     #main-header {
@@ -37,14 +41,27 @@
         justify-content: space-between;
         
     }
-    
+
+    #main-header #header-itens-md-img {
+        width: 100%;
+        justify-content: space-between;
+        padding: 0px 20px;
+    }
+
+    #main-header #main-header-input {
+        order: 1;
+    }
+
     #main-header #full-logo-img {
+        order: 2;
         width: 267.27px;
         margin-bottom: 0px;
     }
     
-    #main-header #shopping-cart-icon {
-        font-size: 44px;
-        margin-left: 0px;
-    }    
+    #main-header #shopping-cart-offcanvas {
+        order: 3;
+    }
+    
+    
+    
 }

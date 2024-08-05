@@ -27,3 +27,12 @@ export type Product = {
   ]
   warranty: string;
 };
+
+export type ProductCart = {
+  id: string;
+  title: string;
+  price: number;
+  totalPrice: number;
+  thumbnail: string;
+  quantity: number;
+};
