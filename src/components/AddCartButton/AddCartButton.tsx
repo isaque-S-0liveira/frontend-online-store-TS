@@ -1,19 +1,36 @@
-import { useNavigate } from 'react-router-dom';
+import { ProductCart } from '../../types/ProductTypes';
+import {
+  getStoredProducts,
+  setStoredProducts } from '../../utils/storage';
 import './AddCartButton.css';
 
-type AddCartButtonProps = {
-  id: string;
-  title: string;
-  Totalprice: number;
-  quantity: number;
-  thumbnail: string;
-};
-
-function AddCartButton(product: AddCartButtonProps) {
-  const navigate = useNavigate();
+function AddCartButton(product: ProductCart) {
   const handleClick = () => {
-    console.log(product);
-    navigate('/shopping-cart');
+    let products = [] as ProductCart[];
+
+    const storedProducts = getStoredProducts();
+
+    if (storedProducts) {
+      products = storedProducts;
+    }
+
+    if (products.length > 0) {
+      const { id, quantity } = product;
+      const productStorage = products.find((
+        p: ProductCart,
+      ) => p.id === id);
+
+      if (productStorage) {
+        productStorage.quantity += quantity;
+        productStorage.totalPrice = productStorage.quantity * productStorage.price;
+        setStoredProducts(products);
+        return;
+      }
+    }
+
+    products.push(product);
+
+    setStoredProducts(products);
   };
   return (
     <button
