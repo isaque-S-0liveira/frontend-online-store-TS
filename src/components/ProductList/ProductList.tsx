@@ -6,6 +6,7 @@ import { getProductsFromCategoryAndQuery } from '../../services/api';
 import { Product } from '../../types/ProductTypes';
 import Loading from '../Loading/Loading';
 import AddCartButton from '../AddCartButton/AddCartButton';
+import ValueFormatter from '../../services/ValueFormatter';
 
 function ProductList() {
   const { searchTermCT, searchCategoryCT } = useContext(SearchTermContext);
@@ -74,14 +75,15 @@ function ProductList() {
                 <p className="product-price">
                   R$
                   {' '}
-                  {product.price}
+                  {ValueFormatter({ valor: product.price })}
                 </p>
               </Link>
               <AddCartButton
                 id={ product.id }
                 title={ product.title }
                 thumbnail={ product.thumbnail }
-                Totalprice={ product.price }
+                price={ product.price }
+                totalPrice={ product.price }
                 quantity={ 1 }
               />
             </div>
