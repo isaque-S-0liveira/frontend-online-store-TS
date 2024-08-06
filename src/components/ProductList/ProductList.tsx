@@ -1,12 +1,10 @@
 import { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import SearchTermContext from '../../context/SearchProductsContext';
 import './ProductList.css';
 import { getProductsFromCategoryAndQuery } from '../../services/api';
 import { Product } from '../../types/ProductTypes';
 import Loading from '../Loading/Loading';
-import AddCartButton from '../AddCartButton/AddCartButton';
-import ValueFormatter from '../../services/ValueFormatter';
+import ProductListCard from './ProductListCard/ProductListCard';
 
 function ProductList() {
   const { searchTermCT, searchCategoryCT } = useContext(SearchTermContext);
@@ -65,28 +63,7 @@ function ProductList() {
       <div id="product-list-main" className="row g-3">
         {products.map((product) => (
           <div key={ product.id } className="col-12 col-sm-4">
-            <div className="product-card">
-              <Link
-                className="product-datails-link"
-                to={ `/product-details/${product.id}` }
-              >
-                <img src={ product.thumbnail } alt={ product.title } />
-                <p className="product-name">{product.title}</p>
-                <p className="product-price">
-                  R$
-                  {' '}
-                  {ValueFormatter({ valor: product.price })}
-                </p>
-              </Link>
-              <AddCartButton
-                id={ product.id }
-                title={ product.title }
-                thumbnail={ product.thumbnail }
-                price={ product.price }
-                totalPrice={ product.price }
-                quantity={ 1 }
-              />
-            </div>
+            <ProductListCard { ...product } />
           </div>
         ))}
       </div>
