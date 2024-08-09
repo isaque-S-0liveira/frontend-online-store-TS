@@ -7,6 +7,7 @@ import TechnicalSpecifications from './TechnicalSpecifications/TechnicalSpecific
 import GoToBackButton from '../../components/GoToBackButton/GoToBackButton';
 import './ProductDetails.css';
 import Loading from '../../components/Loading/Loading';
+import ProductReviews from './ProductReviews/ProductReviews';
 
 function ProductDetails() {
   const navigate = useNavigate();
@@ -19,27 +20,32 @@ function ProductDetails() {
     navigate('/');
   };
 
-  useEffect(() => {
+  const fetchProducts = async () => {
     if (!productId) {
       return;
     }
-    const fetchProducts = async () => {
-      try {
-        setLoading(true);
-        const productList = await getProductById(productId) as Product;
-        if (!productList) {
-          alertMessageAndRedirect();
-          return;
-        }
-        setLoading(false);
-        setProductDetail(productList);
-      } catch (error) {
-        setLoading(false);
+    try {
+      setLoading(true);
+      const productList = await getProductById(productId) as Product;
+      if (!productList) {
         alertMessageAndRedirect();
+        return;
       }
-    };
+      setLoading(false);
+      setProductDetail(productList);
+    } catch (error) {
+      setLoading(false);
+      alertMessageAndRedirect();
+    }
+  };
+
+  useEffect(() => {
     fetchProducts();
   }, []);
+
+  useEffect(() => {
+    fetchProducts();
+  }, [productId]);
 
   if (loading) {
     return (
@@ -50,14 +56,23 @@ function ProductDetails() {
   }
 
   return (
-    <div id="product-details-main" className="row main-content">
+    <div id="product-details-main" className="main-content">
       <GoToBackButton />
-      <div className="row product-details-content">
-        <div className="col-12 col-md-6 product-selected-and-specifications">
+      <div className="row product-details-content ">
+        <div
+          id="product-selected-layout-contianer"
+          className="col-12 col-md-6"
+        >
           <ProductSelected productDetail={ productDetail } />
         </div>
-        <div className="col-12 col-md-6 product-selected-and-specifications">
+        <div
+          id="technical-specifications-layout-contianer"
+          className="col-12 col-md-6"
+        >
           <TechnicalSpecifications productDetail={ productDetail } />
+        </div>
+        <div>
+          <ProductReviews />
         </div>
       </div>
     </div>
