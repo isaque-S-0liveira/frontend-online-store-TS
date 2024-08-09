@@ -1,0 +1,27 @@
+.star-rating-container input[type=radio] {
+  display: none;
+}
+
+.star-rating-container label {
+    padding: 0px 5px;
+}
+
+.star-rating-container i {
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.star-rating-container #rating-storage {
+    cursor: default;
+}
+
+@media screen and (min-width: 576px) {
+    .star-rating-container i {
+        font-size: 25px;
+    }
+}
+
+.star-rating-container .rating-star {
+    color: #31C28D;
+}
+
