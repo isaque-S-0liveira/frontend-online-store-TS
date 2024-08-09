@@ -1,4 +1,5 @@
 /* eslint-disable max-len */
+import { Link } from 'react-router-dom';
 import { ProductCart } from '../../../../types/ProductTypes';
 import { removeStoredProduct } from '../../../../utils/storage';
 import AddRemoveTotalProducts from '../../../AddRemoveTotalProducts/AddRemoveTotalProducts';
@@ -11,7 +12,7 @@ function CardProduct({ product }: { product: ProductCart }) {
       key={ product.id }
       className="list-group-item"
     >
-      <span className="" id="product-cart-title">{ product.title }</span>
+      <span id="product-cart-title">{ product.title }</span>
       <div id="btnClose-img-buttons-container">
         <button
           id="btn-close-product-card-item"
@@ -20,7 +21,9 @@ function CardProduct({ product }: { product: ProductCart }) {
           aria-label="remove-product"
           onClick={ () => removeStoredProduct(product.id) }
         />
-        <img id="product-cart-img" src={ product.thumbnail } alt={ product.title } />
+        <Link to={ `/product-details/${product.id}` } id="product-cart-link" className="text-decoration-none">
+          <img id="product-cart-img" src={ product.thumbnail } alt={ product.title } />
+        </Link>
         <AddRemoveTotalProducts
           inCart
           productId={ product.id }
