@@ -31,11 +31,12 @@ function ProductPictures({ productDetail }: { productDetail: Product }) {
           <div
             key={ picture.id }
             data-bs-interval="4000"
-            className={ `carousel-item  ${index === 0 ? 'active' : ''}` }
+            className={ `carousel-item ${index === 0 ? 'active' : ''}` }
           >
             <img
               src={ picture.url }
               alt={ productDetail.title }
+              className="d-block w-100" /* Adicione a classe d-block para garantir que a imagem seja exibida como um bloco */
             />
           </div>
         ))}
