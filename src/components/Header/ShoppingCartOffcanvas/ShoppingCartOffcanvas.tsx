@@ -1,4 +1,5 @@
 /* eslint-disable sonarjs/no-duplicate-string */
+import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { ProductCart } from '../../../types/ProductTypes';
 import './ShoppingCartOffcanvas.css';
@@ -10,6 +11,7 @@ import TotalPrice from '../../TotalPriceOfProducts/TotalPrice';
 
 function ShoppingCartOffcanvas() {
   const [products, setProducts] = useState<ProductCart[]>([]);
+  const { productId } = useParams();
 
   const totalValueAllProducts = () => {
     const total = products.reduce((acc, product) => acc + product.totalPrice, 0);
@@ -19,6 +21,18 @@ function ShoppingCartOffcanvas() {
   useEffect(() => {
     totalValueAllProducts();
   }, [products]);
+
+  useEffect(() => {
+    // fecha o offcanvas ao ser redirecionado para a página de detalhes do produto
+    const offcanvasElement = document.getElementById('offcanvasShoppingCart');
+    if (offcanvasElement) {
+      const offcanvasInstance = (window as any).bootstrap.Offcanvas
+        .getInstance(offcanvasElement);
+      if (offcanvasInstance) {
+        offcanvasInstance.hide();
+      }
+    }
+  }, [productId]);
 
   useStorageUpdate(() => { setProducts(getStoredProducts()); });
 
