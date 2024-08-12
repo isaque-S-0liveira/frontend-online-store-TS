@@ -1,0 +1,28 @@
+#purchase-made-modal-contianer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#purchase-made-modal-contianer .modal-text {
+    font-weight:bolder;
+}
+
+#purchase-made-modal-contianer .modal-footer .btn-secondary {
+    width: 200px;
+}
+@keyframes grow {
+    0% {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .grow-animation {
+    animation: grow 2s ease-in-out forwards;
+  }
