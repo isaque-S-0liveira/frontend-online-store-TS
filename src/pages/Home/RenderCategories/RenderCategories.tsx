@@ -30,6 +30,9 @@ function RenderCategories() {
         <button
           onClick={ handleClick }
           key={ id }
+          data-bs-dismiss="offcanvas"
+          data-bs-target="#offcanvasCategories"
+          aria-label="Close"
           className={ `category-button 
             ${stateCategoryId === id && 'category-selected'}` }
           value={ id }
