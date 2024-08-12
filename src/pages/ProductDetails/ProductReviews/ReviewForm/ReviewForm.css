@@ -4,16 +4,6 @@
     max-width: 488px;
 }
 
-#review-form-container input[type="email"]:focus {
-    border: 1px solid #31C28D;
-    box-shadow: #31C28D 0px 0px 5px;
-}
-
-#review-form-container textarea:focus {
-    border: 1px solid #31C28D;
-    box-shadow: #31C28D 0px 0px 5px;
-}
-
 #review-form-container button {
     width: 100%;
     max-width: 300px;
