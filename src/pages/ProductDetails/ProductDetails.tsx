@@ -58,7 +58,7 @@ function ProductDetails() {
   return (
     <div id="product-details-main" className="main-content">
       <GoToBackButton />
-      <div className="row product-details-content ">
+      <div className="row product-details-content">
         <div
           id="product-selected-layout-contianer"
           className="col-12 col-md-6"
