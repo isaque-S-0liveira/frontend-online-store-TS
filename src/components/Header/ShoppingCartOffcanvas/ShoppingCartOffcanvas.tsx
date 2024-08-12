@@ -1,17 +1,17 @@
 /* eslint-disable sonarjs/no-duplicate-string */
-import { useParams } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { ProductCart } from '../../../types/ProductTypes';
 import './ShoppingCartOffcanvas.css';
 import useStorageUpdate from '../../../hooks/useStorageUpdate';
 import { getStoredProducts } from '../../../utils/storage';
 import ValueFormatter from '../../../services/ValueFormatter';
-import CardProduct from './CardProduct/CardProduct';
+import CardProduct from '../../CardProduct/CardProduct';
 import TotalPrice from '../../TotalPriceOfProducts/TotalPrice';
 
 function ShoppingCartOffcanvas() {
   const [products, setProducts] = useState<ProductCart[]>([]);
-  const { productId } = useParams();
+  const location = useLocation();
 
   const totalValueAllProducts = () => {
     const total = products.reduce((acc, product) => acc + product.totalPrice, 0);
@@ -23,7 +23,7 @@ function ShoppingCartOffcanvas() {
   }, [products]);
 
   useEffect(() => {
-    // fecha o offcanvas ao ser redirecionado para a página de detalhes do produto
+    // fecha o offcanvas quando muda de rota
     const offcanvasElement = document.getElementById('offcanvasShoppingCart');
     if (offcanvasElement) {
       const offcanvasInstance = (window as any).bootstrap.Offcanvas
@@ -32,7 +32,7 @@ function ShoppingCartOffcanvas() {
         offcanvasInstance.hide();
       }
     }
-  }, [productId]);
+  }, [location]);
 
   useStorageUpdate(() => { setProducts(getStoredProducts()); });
 
@@ -82,9 +82,11 @@ function ShoppingCartOffcanvas() {
         </div>
         <div className={ products.length === 0 ? 'd-none' : 'offcanvas-footer' }>
           <TotalPrice products={ products } />
-          <button type="button" className="primary-button">
-            Finalizar Compra
-          </button>
+          <Link to="/checkout">
+            <button type="button" className="primary-button">
+              Finalizar Compra
+            </button>
+          </Link>
         </div>
       </div>
     </div>
