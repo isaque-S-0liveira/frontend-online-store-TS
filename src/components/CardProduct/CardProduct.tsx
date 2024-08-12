@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
 import { Link } from 'react-router-dom';
-import { ProductCart } from '../../../../types/ProductTypes';
-import { removeStoredProduct } from '../../../../utils/storage';
-import AddRemoveTotalProducts from '../../../AddRemoveTotalProducts/AddRemoveTotalProducts';
+import { ProductCart } from '../../types/ProductTypes';
+import { removeStoredProduct } from '../../utils/storage';
+import AddRemoveTotalProducts from '../AddRemoveTotalProducts/AddRemoveTotalProducts';
 import './CardProduct.css';
 
 function CardProduct({ product }: { product: ProductCart }) {
@@ -10,7 +10,6 @@ function CardProduct({ product }: { product: ProductCart }) {
     <li
       id="product-cart-card"
       key={ product.id }
-      className="list-group-item"
     >
       <span id="product-cart-title">{ product.title }</span>
       <div id="btnClose-img-buttons-container">
