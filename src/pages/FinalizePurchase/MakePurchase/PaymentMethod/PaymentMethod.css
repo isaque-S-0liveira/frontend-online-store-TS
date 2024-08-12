@@ -1,0 +1,29 @@
+#payment-method-main  {
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: 1px solid #00000020;
+    padding: 20px 0px;
+}
+
+#payment-method-main .payment-method-input-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#payment-method-main .form-check-input {
+    border: 1px solid #00000078;
+    box-shadow: none;
+}
+
+#payment-method-main .form-check-input:checked {
+    background-color: #94979D;
+    border-color: #00000016;
+    box-shadow: none;
+}
+
+@media screen and (min-width: 768px) {
+    #payment-method-main img {
+        width: 80px;
+    }
+}

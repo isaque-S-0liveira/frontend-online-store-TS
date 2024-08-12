@@ -1,0 +1,68 @@
+
+@media screen and (min-width: 992px) {
+    #make-purchase-buyer-information {
+        padding: 0px 50px;
+    }
+    
+}
+#make-purchase-buyer-information .input-container {
+    padding: 0px 5px;
+}
+
+
+#make-purchase-buyer-information #container-name {
+    order: 0;
+}
+#make-purchase-buyer-information #container-email {
+    order: 1;
+}
+
+#make-purchase-buyer-information #container-phone{
+    order: 2;
+}
+
+#make-purchase-buyer-information #container-cpf {
+    order: 3;
+}
+
+#make-purchase-buyer-information #container-cep {
+    order: 4;
+}
+
+#make-purchase-buyer-information #container-address {
+    order: 5;
+}
+
+#make-purchase-buyer-information #container-complement {
+    order: 6;
+}
+
+#make-purchase-buyer-information #container-number {
+    order: 7;
+}
+
+#make-purchase-buyer-information #container-city {
+    order: 8;
+}
+
+#make-purchase-buyer-information #container-state {
+    order: 9;
+}
+
+@media screen and (min-width: 768px) {
+    #make-purchase-buyer-information #container-name {
+        order: 0;
+    }
+    
+    #make-purchase-buyer-information #container-cpf {
+        order: 1;
+    }
+    #make-purchase-buyer-information #container-email {
+        order: 2;
+    }
+
+    #make-purchase-buyer-information #container-phone{
+        order: 3;
+    }
+}
+
