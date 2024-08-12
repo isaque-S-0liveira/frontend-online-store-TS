@@ -26,15 +26,25 @@
 #product-status-main #product-status {
     color: rgba(49, 194, 141, 1);
     font-family: Epilogue;
-    font-size: 30px;
+    font-size: 20px;
     font-weight:bolder;
     text-align: center;
 }
 
 #product-status-main #product-status-aux {
     font-family: Epilogue;
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 500;
     line-height: 20.5px;
     text-align: center;
+}
+
+@media screen and (min-width: 768px){
+    #product-status-main #product-status {
+        font-size: 30px;
+    }
+    
+    #product-status-main #product-status-aux {
+        font-size: 20px;
+    }
 }
