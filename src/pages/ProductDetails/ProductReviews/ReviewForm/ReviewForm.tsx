@@ -33,7 +33,7 @@ function ReviewForm() {
       const { email } = review;
       const reviewStorage = reviews.find((
         r: Review,
-      ) => r.email === email);
+      ) => r.email === email && r.productId === productId);
       if (reviewStorage) {
         reviewStorage.rating = review.rating;
         reviewStorage.description = review.description;
