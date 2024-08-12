@@ -31,6 +31,10 @@ export const removeStoredProduct = (productId: ProductCart['id']): void => {
   dispatchStorageUpdate();
 };
 
+export const clearStorageProducts = (): void => {
+  localStorage.removeItem(PRODUCTS_KEY);
+  dispatchStorageUpdate();
+};
 export const dispatchStorageUpdate = () => {
   window.dispatchEvent(new Event('storage-update'));
 };
