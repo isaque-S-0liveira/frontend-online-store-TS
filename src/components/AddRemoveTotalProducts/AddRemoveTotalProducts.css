@@ -34,6 +34,26 @@
     border-radius: 100%;
 }
 
+#product-stock-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+#product-stock-container .product-stock {
+    font-size: 14px;
+    line-height: 20.5px;
+    color: rgba(68, 73, 85, 1);
+}
+
+ #product-stock-container #product-stock-value {
+    background-color: #31C28D;
+    padding: 5px 10px;
+    border-radius: 100%;
+    color: #fff;
+}
+
 #add-remove-total-products-container .add-remove-product-button{
     color: rgb(44, 44, 45);
     background-color: transparent;

@@ -1,12 +1,24 @@
 /* eslint-disable max-len */
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import AddCartButton from '../../../components/AddCartButton/AddCartButton';
 import AddRemoveProducts from '../../../components/AddRemoveTotalProducts/AddRemoveTotalProducts';
 import { Product } from '../../../types/ProductTypes';
 import './TechnicalSpecifications.css';
 
 function TechnicalSpecifications({ productDetail }: { productDetail: Product }) {
+  const location = useLocation();
+  const stockQuantity = location.state.productStock.available_quantity;
+  const [productStock, setProductStock] = useState({ available_quantity: 0 });
   const [quantityAndValue, setQuantityAndValue] = useState({ quantity: 1, totalValue: productDetail.price });
+
+  useEffect(() => {
+    if (stockQuantity) {
+      setProductStock({ available_quantity: stockQuantity });
+    } else {
+      setProductStock({ available_quantity: 50 });
+    }
+  }, []);
 
   if (!productDetail || !productDetail.pictures) {
     return null;
@@ -49,7 +61,11 @@ function TechnicalSpecifications({ productDetail }: { productDetail: Product }) 
         <div
           className="col-12 col-sm-6 col-md-12 col-lg-12 col-xl-6 "
         >
-          <AddRemoveProducts price={ productDetail.price } setQuantityAndValue={ setQuantityAndValue } />
+          <AddRemoveProducts
+            price={ productDetail.price }
+            setQuantityAndValue={ setQuantityAndValue }
+            productStock={ productStock.available_quantity }
+          />
         </div>
         <div
           id="add-cart-button-container"
@@ -62,6 +78,7 @@ function TechnicalSpecifications({ productDetail }: { productDetail: Product }) 
             thumbnail={ productDetail.thumbnail }
             totalPrice={ quantityAndValue.totalValue }
             quantity={ quantityAndValue.quantity }
+            productStock={ productStock.available_quantity }
           />
         </div>
       </div>

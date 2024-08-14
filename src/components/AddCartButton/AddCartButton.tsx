@@ -23,6 +23,9 @@ function AddCartButton(product: ProductCart) {
       if (productStorage) {
         productStorage.quantity += quantity;
         productStorage.totalPrice = productStorage.quantity * productStorage.price;
+        if (productStorage.quantity + quantity > productStorage.productStock) {
+          productStorage.quantity = productStorage.productStock;
+        }
         setStoredProducts(products);
         return;
       }

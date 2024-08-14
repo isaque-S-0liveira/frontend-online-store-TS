@@ -1,3 +1,4 @@
+/* eslint-disable no-return-assign */
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import useStorageUpdate from '../../../hooks/useStorageUpdate';
@@ -9,7 +10,7 @@ import './ProductListCard.css';
 
 function ProductListCard(product: Product) {
   const [productsInCart, setProductsInCart] = useState<ProductCart[]>([]);
-  const { id, title, thumbnail, price } = product;
+  const { id, title, thumbnail, price, available_quantity } = product;
 
   useStorageUpdate(() => setProductsInCart(getStoredProducts()));
   return (
@@ -24,6 +25,7 @@ function ProductListCard(product: Product) {
       <Link
         className="product-datails-link"
         to={ `/product-details/${id}` }
+        state={ { productStock: { available_quantity } } }
       >
         <img src={ thumbnail } alt={ title } />
         <p className="product-name">{title}</p>
@@ -39,6 +41,7 @@ function ProductListCard(product: Product) {
         thumbnail={ thumbnail }
         price={ price }
         totalPrice={ price }
+        productStock={ available_quantity }
         quantity={ 1 }
       />
     </div>

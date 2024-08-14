@@ -20,7 +20,12 @@ function CardProduct({ product }: { product: ProductCart }) {
           aria-label="remove-product"
           onClick={ () => removeStoredProduct(product.id) }
         />
-        <Link to={ `/product-details/${product.id}` } id="product-cart-link" className="text-decoration-none">
+        <Link
+          to={ `/product-details/${product.id}` }
+          state={ { productStock: { available_quantity: product.productStock } } }
+          id="product-cart-link"
+          className="text-decoration-none"
+        >
           <img id="product-cart-img" src={ product.thumbnail } alt={ product.title } />
         </Link>
         <AddRemoveTotalProducts
@@ -29,6 +34,7 @@ function CardProduct({ product }: { product: ProductCart }) {
           totalValue={ product.totalPrice }
           productQuantity={ product.quantity }
           price={ product.price }
+          productStock={ product.productStock }
         />
       </div>
     </li>

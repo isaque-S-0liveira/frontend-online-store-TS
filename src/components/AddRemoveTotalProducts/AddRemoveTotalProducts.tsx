@@ -15,6 +15,7 @@ type AddRemoveTotalProductsProps = {
   price: ProductCart['price'];
   totalValue?: ProductCart['totalPrice'];
   productQuantity?: ProductCart['quantity'];
+  productStock: number;
   setQuantityAndValue?: React.Dispatch<React.SetStateAction<{
     totalValue: ProductCart['totalPrice'];
     quantity: ProductCart['quantity'];
@@ -27,6 +28,7 @@ function AddRemoveTotalProducts({
   inCart = false,
   productQuantity = 1,
   price,
+  productStock,
   setQuantityAndValue,
 }: AddRemoveTotalProductsProps) {
   const [state, setState] = useState({
@@ -69,6 +71,7 @@ function AddRemoveTotalProducts({
   };
 
   const handleAddProduct = () => {
+    if (state.totalProducts >= productStock) return;
     const newTotalProducts = state.totalProducts + 1;
     const newAmount = state.amount + price;
     updateState(newTotalProducts, newAmount);
@@ -90,28 +93,51 @@ function AddRemoveTotalProducts({
   useStorageUpdate(handleStorageUpdate);
 
   return (
-    <div id="add-remove-total-products-container">
-      <div id="total-value-products-container">
-        <span>R$</span>
-        <span id="total-value-products">
-          {ValueFormatter({ valor: inCart ? totalValue : state.amount })}
-        </span>
+    <div>
+      <div id="add-remove-total-products-container">
+        <div id="total-value-products-container">
+          <span>R$</span>
+          <span id="total-value-products">
+            {ValueFormatter({ valor: inCart ? totalValue : state.amount })}
+          </span>
+        </div>
+        <div id="remove-add-buttons-container">
+          <button
+            className="add-remove-product-button"
+            onClick={ handleRemoveProduct }
+          >
+            -
+          </button>
+          <span id="quantity-of-products">{state.totalProducts}</span>
+          <button
+            className="add-remove-product-button"
+            onClick={ handleAddProduct }
+          >
+            +
+          </button>
+        </div>
+        {!inCart && (
+          <div id="product-stock-container">
+            <span className="product-stock">Estoque</span>
+            <span id="product-stock-value" className="product-stock">
+              {productStock}
+            </span>
+          </div>
+        )}
       </div>
-      <div id="remove-add-buttons-container">
-        <button
-          className="add-remove-product-button"
-          onClick={ handleRemoveProduct }
+
+      {inCart && (
+        <div
+          id="product-stock-container"
+          className="d-flex justify-content-end"
         >
-          -
-        </button>
-        <span id="quantity-of-products">{state.totalProducts}</span>
-        <button
-          className="add-remove-product-button"
-          onClick={ handleAddProduct }
-        >
-          +
-        </button>
-      </div>
+          <span className="product-stock">Estoque</span>
+          <span id="product-stock-value" className="product-stock">
+            {productStock}
+          </span>
+        </div>
+      )}
+
     </div>
   );
 }

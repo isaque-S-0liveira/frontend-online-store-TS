@@ -8,6 +8,7 @@ export type Product = {
   title: string;
   price: number;
   thumbnail: string;
+  available_quantity: number;
   pictures: [
     {
       id: string;
@@ -33,6 +34,7 @@ export type ProductCart = {
   title: string;
   price: number;
   totalPrice: number;
+  productStock: number;
   thumbnail: string;
   quantity: number;
 };
