@@ -1,7 +1,10 @@
 
 #shopping-cart-offcanvas .offcanvas {
+    display: flex;
+    flex-direction: column;
     margin-top: 148px;
-    height: calc(100% - 148px);
+    height: 100%;
+    max-height: calc(100vh - 148px) !important;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.427);
 }
     
@@ -55,7 +58,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: calc(100% - 100px);
     color: #31C28D;
 }
 
@@ -69,6 +72,7 @@
     gap: 10px 0px;
     padding-top: 5px;
     padding-bottom: 15px;
+    flex-shrink: 0;
 }
 
 #shopping-cart-offcanvas .offcanvas-footer .primary-button {
