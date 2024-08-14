@@ -1,0 +1,13 @@
+#select-order-products-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#select-order-products-container .form-select {
+    display: flex;
+    width: 65%;
+    max-width: 300px;
+    background-color: transparent;
+    border: 1px solid #000000;
+    box-shadow: none;
+}
