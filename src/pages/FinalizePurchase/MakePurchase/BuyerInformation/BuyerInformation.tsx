@@ -1,5 +1,5 @@
 import CPFInput from './Inputs/CPFInput';
-import SelectState from './SelectState';
+import SelectState from './Inputs/SelectState';
 import './BuyerInformation.css';
 import CEPInput from './Inputs/CEPInput';
 import PhoneInput from './Inputs/PhoneInput';
