@@ -1,5 +1,5 @@
 /* eslint-disable no-return-assign */
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import useStorageUpdate from '../../../hooks/useStorageUpdate';
 import { Product, ProductCart } from '../../../types/ProductTypes';
@@ -10,7 +10,7 @@ import './ProductListCard.css';
 
 function ProductListCard(product: Product) {
   const [productsInCart, setProductsInCart] = useState<ProductCart[]>([]);
-  const { id, title, thumbnail, price, available_quantity } = product;
+  const { id, title, thumbnail, price, available_quantity, shipping } = product;
 
   useStorageUpdate(() => setProductsInCart(getStoredProducts()));
   return (
@@ -18,8 +18,15 @@ function ProductListCard(product: Product) {
       {productsInCart.some((productInCart) => (
         productInCart.id === id
       )) && (
-        <div id="productInCart-icon-container">
+        <div className="productInCart-icon-container">
           <i className="bi bi-cart-check-fill" />
+        </div>
+      )}
+      {shipping.free_shipping && (
+        <div className="free-shipping-container d-sm-none d-md-block">
+          <div className="free-shipping-text-container">
+            <p className="product-shipping-text">Frete Grátis!</p>
+          </div>
         </div>
       )}
       <Link
@@ -29,6 +36,9 @@ function ProductListCard(product: Product) {
       >
         <img src={ thumbnail } alt={ title } />
         <p className="product-name">{title}</p>
+        <p className="product-shipping-text d-none d-sm-block d-md-none">
+          {shipping.free_shipping && 'Frete Grátis'}
+        </p>
         <p className="product-price">
           R$
           {' '}

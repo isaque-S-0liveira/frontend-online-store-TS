@@ -9,6 +9,9 @@ export type Product = {
   price: number;
   thumbnail: string;
   available_quantity: number;
+  shipping:{
+    free_shipping: boolean,
+  }
   pictures: [
     {
       id: string;

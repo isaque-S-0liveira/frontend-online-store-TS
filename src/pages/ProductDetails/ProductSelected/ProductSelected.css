@@ -5,6 +5,10 @@
     overflow: hidden;
 }
 
+#product-selected #product-header {
+    display: flex;
+    justify-content: space-between;
+} 
 
 #product-selected #product-name-header {
     display: flex;
@@ -17,7 +21,18 @@
     font-weight: bold;
 }
 
-
+#product-selected #product-header #free-shipping {
+    background-color: #31C28D;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px;
+    height: 90px;
+    width: 100%;
+    max-width: 80px;
+    text-align: center;
+    border-radius: 0px 0px 10px 10px;
+}
 
 #product-selected  img {
     width: 50%;
