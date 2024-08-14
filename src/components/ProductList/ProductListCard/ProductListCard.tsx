@@ -1,5 +1,5 @@
 /* eslint-disable no-return-assign */
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import useStorageUpdate from '../../../hooks/useStorageUpdate';
 import { Product, ProductCart } from '../../../types/ProductTypes';
