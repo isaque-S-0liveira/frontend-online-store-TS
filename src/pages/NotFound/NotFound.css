@@ -1,0 +1,33 @@
+#not-found-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+}
+
+#not-found-main #not-found-title {
+    font-size: 20px;
+    text-align: center;
+    color: #000000;
+    font-weight: bold;
+}
+
+#not-found-main #not-found-link {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #31C28D;
+    font-weight: bold; 
+    text-decoration: none;
+    transition: .5s;
+}
+
+#not-found-main #not-found-link i {
+    font-size: 20px;
+    padding-right: 5px;
+}
+
+#not-found-main #not-found-link:hover {
+    font-size: 15px;   
+    text-decoration:underline;
+}
