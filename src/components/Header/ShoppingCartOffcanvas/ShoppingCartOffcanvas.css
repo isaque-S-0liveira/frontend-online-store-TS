@@ -62,7 +62,6 @@
 }
 
 #shopping-cart-offcanvas .offcanvas-footer {
-    /* background-color: #31C28D; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -72,6 +71,7 @@
     padding-top: 5px;
     padding-bottom: 15px;
     flex-shrink: 0;
+    border-top: 1px solid #7374746e;
 }
 
 #shopping-cart-offcanvas .offcanvas-footer .primary-button {
