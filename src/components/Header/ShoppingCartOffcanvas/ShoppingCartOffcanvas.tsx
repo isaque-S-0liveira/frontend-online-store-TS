@@ -8,6 +8,7 @@ import { getStoredProducts } from '../../../utils/storage';
 import ValueFormatter from '../../../services/ValueFormatter';
 import CardProduct from '../../CardProduct/CardProduct';
 import TotalPrice from '../../TotalPriceOfProducts/TotalPrice';
+import ShoppingCartButton from './ShoppingCartButton/ShoppingCartButton';
 
 function ShoppingCartOffcanvas() {
   const [products, setProducts] = useState<ProductCart[]>([]);
@@ -38,23 +39,7 @@ function ShoppingCartOffcanvas() {
 
   return (
     <div id="shopping-cart-offcanvas">
-      <button
-        id="shopping-cart-button"
-        type="button"
-        data-bs-toggle="offcanvas"
-        data-bs-target="#offcanvasShoppingCart"
-        aria-controls="offcanvasShoppingCart"
-        aria-label="Shopping Cart"
-      >
-        <i className="bi bi-cart-fill" />
-        <span
-          id="shopping-cart-badge"
-          className={ `badge rounded-pill ${products.length === 0 && 'visually-hidden'}` }
-        >
-          { products.length > 0 && products.length <= 99 ? products.length : '99+' }
-          <span className="visually-hidden">unread messages</span>
-        </span>
-      </button>
+      <ShoppingCartButton products={ products } />
 
       <div
         className="offcanvas offcanvas-end offcanvas-custom"
