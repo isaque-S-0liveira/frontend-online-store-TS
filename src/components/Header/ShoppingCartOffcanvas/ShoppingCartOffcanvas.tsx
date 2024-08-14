@@ -35,6 +35,25 @@ function ShoppingCartOffcanvas() {
     }
   }, [location]);
 
+  useEffect(() => {
+    const adjustOffcanvasHeight = () => {
+      const offcanvasElement = document.getElementById('offcanvasShoppingCart');
+      if (offcanvasElement) {
+        const viewportHeight = window.innerHeight;
+        offcanvasElement.style.height = `${viewportHeight - 148}px`;
+      }
+    };
+
+    adjustOffcanvasHeight();
+
+    // Ajusta a altura quando a janela for redimensionada
+    window.addEventListener('resize', adjustOffcanvasHeight);
+
+    return () => {
+      window.removeEventListener('resize', adjustOffcanvasHeight);
+    };
+  }, []);
+
   useStorageUpdate(() => { setProducts(getStoredProducts()); });
 
   return (
