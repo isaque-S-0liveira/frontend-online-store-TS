@@ -28,6 +28,11 @@ html, body,  #root{
     box-shadow: #31C28D 0px 0px 5px;
 }
 
+.form-select:focus {
+    border: 1px solid #31C28D;
+    box-shadow: #31C28D 0px 0px 5px;
+}
+
 .primary-button:hover {
     background-color: #1E9E7D;
 }
