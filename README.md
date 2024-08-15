@@ -30,9 +30,9 @@ O foco principal deste projeto é, com base nos ensinamentos React da Trybe, faz
 Frontend oline store é uma aplicação responsiva que consome a API do mercado livre, permitindo aos usuários buscar produtos por termos e categorias, interagir com os produtos, visualizar detalhes e simular a finalização da compra. As principais funcionalidades do Frontend Oline store incluem:
 
 - **Pesquisa de produtos**: Permite que os usuários procurem produtos por termo ou categoria.
-- **Listagem de produtos**: Exibe imagem, nome, preço dos produtos, mostrando se possui frete grátis e se já foi adicionado ao carrinho.
+- **Listagem de produtos**: Exibe imagem, nome, preço dos produtos, mostrando se possui frete grátis e se já foi adicionado ao carrinho, após a listagem o usuário pode ordenar a lista de produtos por maior e menor preço.
 - **Visualização dos detalhes de um produto**: Mostra imagens e especificações técnicas de um produto.
-- **Interação com os produtos**: Permite o usuário nteragir com os produtos buscados de modo a adicioná-los e removê-los de um carrinho de compras em diferentes quantidades.
+- **Interação com os produtos**: Permite o usuário interagir com os produtos buscados de modo a adicioná-los e removê-los de um carrinho de compras em diferentes quantidades.
 - **Avaliações de um produto**: Permite a visualização de avaliações prévias, bem como criar novas avaliações.
 - **Simulação de finalização de compra**: Simula a finalização da compra dos itens selecionados.
 ---
