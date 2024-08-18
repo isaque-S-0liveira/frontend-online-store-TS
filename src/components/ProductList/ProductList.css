@@ -1,6 +1,6 @@
 #product-list-main {
     padding: 10px;
-    height: calc(100% - 83px);
+    height: calc(100% - 50px);
     overflow-y: auto;
     margin-top: 2px;
     margin-right: 2px;
