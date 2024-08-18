@@ -1,17 +1,17 @@
+/* eslint-disable max-len */
+import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import { Product } from '../../../types/ProductTypes';
-import AddRemoveTotalProducts from '../../../components/AddRemoveTotalProducts/AddRemoveTotalProducts';
 import AddCartButton from '../../../components/AddCartButton/AddCartButton';
+import AddRemoveProducts from '../../../components/AddRemoveTotalProducts/AddRemoveTotalProducts';
+import { Product } from '../../../types/ProductTypes';
+import './TechnicalSpecifications.css';
 
 function TechnicalSpecifications({ productDetail }: { productDetail: Product }) {
   const location = useLocation();
+
   const stockQuantity = location.state?.productStock?.available_quantity || 50;
-
   const [productStock, setProductStock] = useState({ available_quantity: stockQuantity });
-
-  const [quantityAndValue, setQuantityAndValue] = useState({
-    quantity: 1, totalValue: productDetail.price });
+  const [quantityAndValue, setQuantityAndValue] = useState({ quantity: 1, totalValue: productDetail.price });
 
   useEffect(() => {
     setProductStock({ available_quantity: stockQuantity });
@@ -42,17 +42,23 @@ function TechnicalSpecifications({ productDetail }: { productDetail: Product }) 
                 {' '}
                 {attribute.name}
                 :
+
+                {' '}
+                {' '}
               </strong>
               {attribute.values.map((value) => (
                 <span key={ value.name }>{value.name}</span>
               ))}
+
             </p>
           ))}
         </ul>
       </div>
       <div id="product-technical-specifications-footer" className="row p-0 m-0">
-        <div className="col-12 col-sm-6 col-md-12 col-lg-12 col-xl-6">
-          <AddRemoveTotalProducts
+        <div
+          className="col-12 col-sm-6 col-md-12 col-lg-12 col-xl-6 "
+        >
+          <AddRemoveProducts
             price={ productDetail.price }
             setQuantityAndValue={ setQuantityAndValue }
             productStock={ productStock.available_quantity }
@@ -73,6 +79,7 @@ function TechnicalSpecifications({ productDetail }: { productDetail: Product }) 
           />
         </div>
       </div>
+
     </div>
   );
 }
