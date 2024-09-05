@@ -25,7 +25,6 @@ function ProductList() {
       const sortedProducts = [...products];
       if (order === 'select') {
         setProducts(originalProducts);
-        console.log('select', originalProducts);
         return;
       }
       setProducts(() => {
@@ -56,8 +55,6 @@ function ProductList() {
           setProductStatusAUX('Por favor, tente novamente');
         }
       } catch (error) {
-        console.log(error);
-
         setProductStatus('Erro ao buscar produtos');
         setProductStatusAUX(
           'Por favor, revise sua conexão e termo procurado, depois tente novamente',

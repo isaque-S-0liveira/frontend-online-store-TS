@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable no-return-assign */
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -31,8 +32,7 @@ function ProductListCard(product: Product) {
       )}
       <Link
         className="product-datails-link"
-        to={ `/product-details/${id}` }
-        state={ { productStock: { available_quantity } } }
+        to={ `/product-details/${id}/${available_quantity}` }
       >
         <img src={ thumbnail } alt={ title } />
         <p className="product-name">{title}</p>

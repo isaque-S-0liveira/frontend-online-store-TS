@@ -10,7 +10,10 @@ function App() {
     <Routes>
       <Route path="/" element={ <Layout /> }>
         <Route index element={ <Home /> } />
-        <Route path="product-details/:productId" element={ <ProductDetails /> } />
+        <Route
+          path="product-details/:productId/:available_quantity"
+          element={ <ProductDetails /> }
+        />
         <Route path="checkout" element={ <FinalizePurchase /> } />
         <Route path="*" element={ <NotFound /> } />
       </Route>

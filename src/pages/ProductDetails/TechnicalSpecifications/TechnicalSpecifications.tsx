@@ -1,21 +1,15 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable max-len */
-import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import AddCartButton from '../../../components/AddCartButton/AddCartButton';
 import AddRemoveProducts from '../../../components/AddRemoveTotalProducts/AddRemoveTotalProducts';
 import { Product } from '../../../types/ProductTypes';
 import './TechnicalSpecifications.css';
 
 function TechnicalSpecifications({ productDetail }: { productDetail: Product }) {
-  const location = useLocation();
-
-  const stockQuantity = location.state?.productStock?.available_quantity || 50;
-  const [productStock, setProductStock] = useState({ available_quantity: stockQuantity });
+  const { available_quantity } = useParams();
   const [quantityAndValue, setQuantityAndValue] = useState({ quantity: 1, totalValue: productDetail.price });
-
-  useEffect(() => {
-    setProductStock({ available_quantity: stockQuantity });
-  }, [stockQuantity]);
 
   if (!productDetail || !productDetail.pictures) {
     return null;
@@ -61,7 +55,7 @@ function TechnicalSpecifications({ productDetail }: { productDetail: Product }) 
           <AddRemoveProducts
             price={ productDetail.price }
             setQuantityAndValue={ setQuantityAndValue }
-            productStock={ productStock.available_quantity }
+            productStock={ Number(available_quantity) }
           />
         </div>
         <div
@@ -75,7 +69,7 @@ function TechnicalSpecifications({ productDetail }: { productDetail: Product }) 
             thumbnail={ productDetail.thumbnail }
             totalPrice={ quantityAndValue.totalValue }
             quantity={ quantityAndValue.quantity }
-            productStock={ productStock.available_quantity }
+            productStock={ Number(available_quantity) }
           />
         </div>
       </div>

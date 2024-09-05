@@ -21,7 +21,7 @@ function CardProduct({ product }: { product: ProductCart }) {
           onClick={ () => removeStoredProduct(product.id) }
         />
         <Link
-          to={ `/product-details/${product.id}` }
+          to={ `/product-details/${product.id}/${product.productStock}` }
           state={ { productStock: { available_quantity: product.productStock } } }
           id="product-cart-link"
           className="text-decoration-none"
