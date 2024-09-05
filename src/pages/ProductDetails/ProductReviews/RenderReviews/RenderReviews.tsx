@@ -18,7 +18,7 @@ function RenderReviews() {
       setReviews(CommentExamples);
       return;
     }
-    setReviews(comments);
+    setReviews([...CommentExamples, ...comments]);
   };
 
   useStorageUpdate(commentsByProduct);
